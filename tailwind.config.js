@@ -9,6 +9,7 @@ export default {
 
       fontFamily: {
         jakarta: "Plus Jakarta Sans",
+        inter: "Inter",
       },
     },
 

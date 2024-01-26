@@ -139,7 +139,7 @@ export default function Loader() {
     <>
       <div className="loader-overlay fixed top-0 left-0 h-full w-full z-[60] bg-white flex justify-center items-center origin-top">
         {/* Loading progress bar */}
-        <div className="absolute left-[50%] translate-x-[-50%] w-full max-w-[280px] flex flex-col items-center gap-4 loading-bar">
+        <div className="absolute top-[80%] left-[50%] translate-x-[-50%] w-full max-w-[280px] flex flex-col items-center gap-4 loading-bar">
           <div className="w-full h-[4px] border-[#34CAA5] border-[1px] ">
             <div className="bg-[#34CAA5] w-[0%] duration-300 h-full loader-fill"></div>
           </div>

@@ -77,7 +77,8 @@ export default function Header() {
         <div className="line-2 bg-black h-[2px] border-none absolute w-[50%] rounded-md translate-y-[4px]"></div>
       </div>
 
-      <div className="sticky top-0 flex justify-between items-center w-full px-8 py-3 bg-[#FAFAFA] border-b-2 border-[#E5EAEF] z-20">
+      {/* Container for desktop header */}
+      <div className="font-inter sticky top-0 flex justify-between items-center w-full px-8 py-3 bg-[#FAFAFA] border-b-2 border-[#E5EAEF] z-20">
         {/* Left part of the dashboard */}
         <div className="font-semibold flex items-center gap-2 justify-center -1024:w-full">
           {/* This image only appears on mobile */}
@@ -143,7 +144,7 @@ export default function Header() {
         </div>
 
         {/* Container for modal */}
-        <div className="modal origin-top overflow-hidden absolute hidden -1024:flex flex-col items-center gap-4 bg-white z-[30] p-5 top-[60px] border-[#EDF2F7] border-[1px] right-[20px] shadow-xl rounded-xl scale-y-0">
+        <div className="font-inter modal origin-top overflow-hidden absolute hidden -1024:flex flex-col items-center gap-4 bg-white z-[30] p-5 top-[60px] border-[#EDF2F7] border-[1px] right-[20px] shadow-xl rounded-xl scale-y-0">
           {/* Container for name, mail and picture */}
           <div className="modal-item flex items-center gap-3 ">
             <img src={justin} className="max-w-[30px]" alt="" />
