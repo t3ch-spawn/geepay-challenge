@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState, useContext } from "react";
 import search from "../assets/search-icon.svg";
 import calendar from "../assets/calendar.svg";
-import justin from "../assets/justin.svg";
+import justin from "../assets/Justin.svg";
 import notification from "../assets/notification.svg";
 import arrDown from "../assets/header-down.svg";
 import gsap from "gsap";
@@ -33,8 +33,6 @@ export default function Header() {
         x: 0,
       });
   }, []);
-
-  
 
   useEffect(() => {
     modalShowm ? timeline.current.play() : timeline.current.reverse();
