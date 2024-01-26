@@ -100,23 +100,7 @@ export default function Orders() {
 function EachOrder(props) {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    gsap.fromTo(
-      ".order-item",
-      {
-        y: "100px",
-        opacity: 0,
-      },
-      {
-        scrollTrigger: {
-          trigger: ".orders_container",
-          start: "top 85%",
-        },
-        y: "0px",
-        opacity: 1,
-        duration: 1,
-        ease: "power3.inOut",
-      }
-    );
+
   }, []);
   return (
     <div className="grid grid-cols-[minmax(220px,_1fr)_repeat(3,_minmax(140px,_1fr))_70px] items-start justify-items-start gap-2">

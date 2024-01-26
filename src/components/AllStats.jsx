@@ -18,21 +18,7 @@ const stats = [
 
 export default function AllStats() {
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.fromTo(
-      ".path",
-      {
-        strokeDashoffset: 320,
-      },
-      {
-        scrollTrigger: {
-          trigger: ".allStats_container",
-          start: "top 80%",
-        },
-        strokeDashoffset: 0,
-        duration: 1,
-      }
-    );
+
   }, []);
   return (
     <Card styles="w-full max-w-[600px] -1200:max-w-[initial] grid grid-cols-2 -650:flex flex-col gap-[0.75rem] allStats_container">

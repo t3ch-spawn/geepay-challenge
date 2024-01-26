@@ -62,6 +62,8 @@ export default function Loader() {
     gsap.registerPlugin(ScrollTrigger);
     gsap.set(".graph-bar", { scaleY: 0 });
     gsap.set(".june-shape", { y: "-20px", opacity: 0 });
+    gsap.set(".order-item", { y: "100px", opacity: 0 });
+    gsap.set(".platform-bar", { scaleX: 0 });
     queue.on("complete", () => {
       gsap
         .timeline()
@@ -88,6 +90,45 @@ export default function Loader() {
               opacity: 1,
               y: 0,
               delay: 0.8,
+            });
+
+            // Animation for the stats section
+            gsap.fromTo(
+              ".path",
+              {
+                strokeDashoffset: 320,
+              },
+              {
+                scrollTrigger: {
+                  trigger: ".allStats_container",
+                  start: "top 50%",
+                },
+                strokeDashoffset: 0,
+                duration: 1,
+              }
+            );
+
+            // Animation for orders section
+            gsap.to(".order-item", {
+              scrollTrigger: {
+                trigger: ".orders_container",
+                start: "top 85%",
+              },
+              y: "0px",
+              opacity: 1,
+              duration: 1,
+              ease: "power3.inOut",
+            });
+
+            // Animation for platforms section
+            gsap.to(".platform-bar", {
+              scrollTrigger: {
+                trigger: ".platforms_container",
+                start: "top 85%",
+              },
+              scaleX: 1,
+              duration: 1,
+              ease: "power3.inOut",
             });
           },
         });

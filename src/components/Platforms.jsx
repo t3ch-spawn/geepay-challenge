@@ -64,20 +64,7 @@ export default function Platforms() {
 
 function EachPlatform(props) {
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.fromTo(
-      ".platform-bar",
-      { scaleX: 0 },
-      {
-        scrollTrigger: {
-          trigger: ".platforms_container",
-          start: "top 85%",
-        },
-        scaleX: 1,
-        duration: 1,
-        ease: "power3.inOut",
-      }
-    );
+
   }, []);
   return (
     <div className="flex flex-col gap-3">
