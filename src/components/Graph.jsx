@@ -103,7 +103,7 @@ export default function Graph() {
         {/* Right side with the bars */}
         <div className="w-full flex -700:overflow-x-scroll">
           {" "}
-          <div className="graph-sheet flex w-full -700:w-[initial] relative -1024:gap-3 justify-around -700:justify-start  ">
+          <div className="graph-sheet flex w-full -650:w-[initial] relative -1024:gap-3 justify-around -700:justify-start  ">
             {graphContent.map((bar, idx) => {
               return (
                 <EachBar key={idx} month={bar.month} height={bar.height} />
@@ -123,22 +123,11 @@ export default function Graph() {
 }
 
 function EachBar(props) {
-  useEffect(() => {
-    const allBars = document.querySelectorAll(".graph-bar");
-    gsap.fromTo(
-      allBars,
-      {
-        scaleY: 0,
-      },
-      { scaleY: 1, duration: 1, ease: "power3.inOut" }
-    );
-  }, []);
-
   return (
-    <div className="flex flex-col w-[33px] -700:w-[25px] gap-8 z-[5] cursor-pointer graph-bar_container h-full justify-end relative">
+    <div className="flex flex-col w-[33px] -650:w-[25px] gap-8 z-[5] cursor-pointer graph-bar_container h-full justify-end relative">
       {/* Shape showing price */}
       {props.month == "Jun" ? (
-        <div className="bg-black w-[100px] h-[30px] rounded-[7px] absolute top-[0px] left-[50%] translate-x-[-50%] text-white flex justify-center items-center ">
+        <div className="june-shape bg-black w-[100px] h-[30px] rounded-[7px] absolute top-[0px] left-[50%] translate-x-[-50%] text-white flex justify-center items-center ">
           <p className="z-[14] relative w-full h-full flex justify-center items-center text-xs">
             {" "}
             $45.000

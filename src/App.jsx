@@ -4,6 +4,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import Lenis from "@studio-freight/lenis";
 import Home from "./components/Home";
+import Loader from "./components/Loader";
 
 export const Context = React.createContext();
 
@@ -23,6 +24,7 @@ function App() {
   return (
     <Context.Provider value={[isMobileSide, setMobileSide]}>
       <main className="w-full relative font-jakarta">
+        <Loader />
         <Home />
       </main>
     </Context.Provider>

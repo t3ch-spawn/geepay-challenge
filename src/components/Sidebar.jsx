@@ -149,8 +149,10 @@ export default function Sidebar() {
         <div className="flex flex-col gap-8">
           {/* Container for top icons in a grid */}
           <div className="overflow-hidden grid grid-cols-2 gap-8 justify-items-center">
-            {topPics.map((pic) => {
-              return <img className="sidebar-item" src={pic.icon} alt="" />;
+            {topPics.map((pic, idx) => {
+              return (
+                <img key={idx} className="sidebar-item" src={pic.icon} alt="" />
+              );
             })}
           </div>
 
@@ -166,8 +168,10 @@ export default function Sidebar() {
         {/* Container for bottom icons */}
 
         <div className="overflow-hidden flex flex-wrap gap-8 justify-around">
-          {bottomPics.map((pic) => {
-            return <img className="sidebar-item" src={pic.icon} alt="" />;
+          {bottomPics.map((pic, idx) => {
+            return (
+              <img key={idx} className="sidebar-item" src={pic.icon} alt="" />
+            );
           })}
         </div>
       </div>

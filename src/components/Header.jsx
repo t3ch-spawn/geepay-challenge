@@ -48,6 +48,14 @@ export default function Header() {
 
   return (
     <>
+      {/* Overlay that pops up when user mobile modal comes up */}
+      <div
+        className={`fixed top-0 left-0 bg-[transparent] h-full w-full z-[15] ${
+          modalShowm ? "block" : "hidden"
+        }`}
+        onClick={handleModal}
+      ></div>
+
       {/* Overlay that toggles with mobile side bar */}
       <div
         className={`fixed top-0 left-0 h-full w-full bg-overlay z-[23] duration-[800ms] ${
@@ -129,7 +137,7 @@ export default function Header() {
         {/* container that controls the mobile view */}
         <div
           onClick={handleModal}
-          className=" gap-3 border-[#DADDDD] rounded-[100px] border-[1px] p-1 cursor-pointer hidden -1024:flex"
+          className="gap-3 border-[#DADDDD] rounded-[100px] border-[1px] p-1 cursor-pointer hidden -1024:flex"
         >
           <img src={justin} className="max-w-[30px]" alt="" />
         </div>
