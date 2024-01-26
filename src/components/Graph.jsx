@@ -73,13 +73,13 @@ export default function Graph() {
   return (
     <Card styles="relative flex flex-col justify-between gap-5 w-full max-w-[900px] -1200:max-w-[initial]">
       {/* Top part of the graph */}
-      <div className="flex justify-between">
-        <p className="text-xl font-semibold">Sales Trends</p>
+      <div className="flex justify-between items-center">
+        <p className="text-xl font-semibold -450:text-sm">Sales Trends</p>
 
         {/* Sort container */}
         <div className="flex text-sm items-center gap-4">
-          <p className="font-medium">Sort by:</p>
-          <div className="flex border-[#E1DFDF] border-[1px] items-center gap-2 rounded-[20px] p-2 px-4 ">
+          <p className="font-medium -450:hidden">Sort by:</p>
+          <div className="flex border-[#E1DFDF] border-[1px] items-center gap-2 rounded-[20px] p-2 px-4 -450:text-xs ">
             <p className="font-[400]">Weekly</p>
             <img src={arrDown} alt="" />
           </div>
@@ -101,9 +101,9 @@ export default function Graph() {
         </div>
 
         {/* Right side with the bars */}
-        {/* <div className="w-full h-full flex"> */}
+        <div className="w-full flex -700:overflow-x-scroll">
           {" "}
-          <div className="flex relative w-full -1024:gap-3 justify-around -700:justify-start  -700:overflow-x-scroll">
+          <div className="graph-sheet flex w-full -700:w-[initial] relative -1024:gap-3 justify-around -700:justify-start  ">
             {graphContent.map((bar, idx) => {
               return (
                 <EachBar key={idx} month={bar.month} height={bar.height} />
@@ -111,12 +111,12 @@ export default function Graph() {
             })}
 
             <img
-              className="absolute w-full h-full bottom-14 left-0 object-cover z-[2]"
+              className="absolute w-[200%] h-full bottom-14 -700:bottom-[3.3rem] left-0 object-cover z-[2]"
               src={graphLines}
               alt=""
             />
           </div>
-        {/* </div> */}
+        </div>
       </div>
     </Card>
   );
@@ -135,7 +135,7 @@ function EachBar(props) {
   }, []);
 
   return (
-    <div className="flex flex-col w-[33px] gap-8 z-[5] cursor-pointer graph-bar_container h-full justify-end relative">
+    <div className="flex flex-col w-[33px] -700:w-[25px] gap-8 z-[5] cursor-pointer graph-bar_container h-full justify-end relative">
       {/* Shape showing price */}
       {props.month == "Jun" ? (
         <div className="bg-black w-[100px] h-[30px] rounded-[7px] absolute top-[0px] left-[50%] translate-x-[-50%] text-white flex justify-center items-center ">
@@ -162,7 +162,7 @@ function EachBar(props) {
           height: `${Math.floor((props.height / 50) * 100)}%`,
         }}
       ></div>
-      <p className="text-[#9E9E9E] font-semibold">{props.month}</p>
+      <p className="text-[#9E9E9E] font-semibold -700:text-sm">{props.month}</p>
     </div>
   );
 }

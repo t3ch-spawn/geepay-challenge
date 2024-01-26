@@ -17,6 +17,7 @@ export default {
       "-1024": { max: "1024px" },
       "-700": { max: "700px" },
       "-650": { max: "650px" },
+      "-450": { max: "450px" },
     },
   },
   plugins: [],
