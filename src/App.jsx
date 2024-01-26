@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import Lenis from "@studio-freight/lenis";
 import Home from "./components/Home";
+
+export const Context = React.createContext();
 
 function App() {
   useEffect(() => {
@@ -16,10 +18,14 @@ function App() {
     requestAnimationFrame(raf);
   }, []);
 
+  const [isMobileSide, setMobileSide] = useState(false);
+
   return (
-    <main className="w-full relative font-jakarta">
-      <Home />
-    </main>
+    <Context.Provider value={[isMobileSide, setMobileSide]}>
+      <main className="w-full relative font-jakarta">
+        <Home />
+      </main>
+    </Context.Provider>
   );
 }
 

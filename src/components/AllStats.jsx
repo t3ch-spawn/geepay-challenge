@@ -35,7 +35,7 @@ export default function AllStats() {
     );
   }, []);
   return (
-    <Card styles="w-full max-w-[600px] -1200:max-w-[initial] grid grid-cols-2 gap-[0.75rem] allStats_container">
+    <Card styles="w-full max-w-[600px] -1200:max-w-[initial] grid grid-cols-2 -650:flex flex-col gap-[0.75rem] allStats_container">
       {stats.map((stat, idx) => {
         return (
           <EachStat

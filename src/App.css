@@ -15,7 +15,7 @@
 } */
 
 .wiubiw {
-  color: #ed544e1f;
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .graph-bar.active {
@@ -34,4 +34,86 @@
 .path {
   stroke-dasharray: 320;
   stroke-dashoffset: 320;
+}
+
+/* Styling which includes the animation for the burger */
+.burger.active .line-1 {
+  animation: line-1_forward 1s forwards;
+
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+}
+.burger.active .line-2 {
+  animation: line-2_forward 1s forwards;
+
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+}
+
+.burger.inactive .line-1 {
+  animation: line-1_backward 1s forwards;
+}
+
+.burger.inactive .line-2 {
+  animation: line-2_backward 1s forwards;
+}
+
+@keyframes line-1_forward {
+  0% {
+    transform: translateY(-4px) translateX(0px);
+  }
+
+  40% {
+    transform: translateY(-4px) translateX(-50px);
+  }
+
+  50% {
+    transform: translateY(-25px) translateX(-25px) rotate(45deg);
+  }
+
+  100% {
+    transform: translateY(0px) translateX(0px) rotate(45deg);
+  }
+}
+@keyframes line-2_forward {
+  0% {
+    transform: translateY(4px) translateX(0px);
+  }
+
+  40% {
+    transform: translateY(4px) translateX(50px);
+  }
+
+  70% {
+    transform: translateY(-25px) translateX(25px) rotate(135deg);
+  }
+
+  100% {
+    transform: translateY(0px) translateX(0px) rotate(135deg);
+  }
+}
+
+@keyframes line-1_backward {
+  0% {
+    transform: translateY(0px) translateX(0px) rotate(45deg);
+  }
+
+  50% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(-4px) translateX(0px) rotate(0deg);
+  }
+}
+@keyframes line-2_backward {
+  0% {
+    transform: translateY(0px) translateX(0px) rotate(135deg);
+  }
+
+  50% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(4px) translateX(0px) rotate(0deg);
+  }
 }
