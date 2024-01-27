@@ -146,7 +146,13 @@ export default function Header() {
                 Justin@gmail.com{" "}
               </p>
             </div>
-            <img src={arrDown} className="max-w-[25px] svg-icon" alt="" />
+            <img
+              src={arrDown}
+              className={`${
+                deskModalShowm ? "active" : ""
+              } header-arr max-w-[25px] svg-icon`}
+              alt=""
+            />
 
             {/* Container for drop down */}
             <div

@@ -190,3 +190,10 @@ body {
 body.active {
   position: relative;
 }
+
+.header-arr {
+  transition: 0.4s ease-in-out;
+}
+.header-arr.active {
+  transform: rotate(180deg);
+}
