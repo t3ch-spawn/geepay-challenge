@@ -10,6 +10,7 @@ import logo from "../assets/logo.svg";
 
 export default function Header() {
   const [isMobileSide, setMobileSide] = useContext(Context);
+  const [liveDate, setLiveDate] = useState("");
   const timeline = useRef(null);
   const [modalShowm, setModalShown] = useState(false);
   const [deskModalShowm, setDeskModalShown] = useState(false);
@@ -50,6 +51,17 @@ export default function Header() {
   function handleMobileSidebar() {
     setMobileSide(!isMobileSide);
   }
+
+  // Use effect that gets the date
+  useEffect(() => {
+    const date = new Date();
+    const day = date.getDate();
+    const monthName = date.toLocaleString("en-US", { month: "long" });
+    const year = date.getFullYear();
+
+    const formattedDate = `${monthName} ${day}, ${year}`;
+    setLiveDate(formattedDate);
+  }, []);
 
   return (
     <>
@@ -119,7 +131,7 @@ export default function Header() {
             <img src={calendar} className="min-w-[25px]" alt="" />
 
             <p className="text-sm font-[600] text-[#26282C] dark:text-white">
-              November 15, 2023
+              {liveDate}
             </p>
           </div>
 
@@ -199,7 +211,7 @@ export default function Header() {
             <img src={calendar} className="min-w-[25px] svg-icon" alt="" />
 
             <p className="text-sm font-[600] text-[#26282C] dark:text-white">
-              November 15, 2023
+              {liveDate}
             </p>
           </div>
 

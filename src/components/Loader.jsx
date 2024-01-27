@@ -143,7 +143,6 @@ export default function Loader() {
     });
 
     queue.on("progress", (e) => {
-      console.log(e);
       const fill = document.querySelector(".loader-fill");
       if (hasLoaded.current) {
         hasLoaded.current.value = false;
