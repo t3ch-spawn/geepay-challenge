@@ -69,7 +69,7 @@ export default function Orders() {
             <p>Invoice</p>
           </div>
 
-          <div className="w-full h-[2px] bg-[#EDF2F6] dark:bg-gray-700"></div>
+          <div className=" h-[2px] w-[750px] bg-[#EDF2F6] dark:bg-gray-700"></div>
         </div>
 
         {/* The orders */}
@@ -87,7 +87,7 @@ export default function Orders() {
               {arr.length - 1 == idx ? (
                 ""
               ) : (
-                <div className="w-full h-[2px] bg-[#EDF2F6] dark:bg-gray-700"></div>
+                <div className="w-[750px] h-[2px] bg-[#EDF2F6] dark:bg-gray-700"></div>
               )}
             </div>
           );
