@@ -92,7 +92,7 @@ export default function Loader() {
 
   useEffect(() => {
     const queue = new createjs.LoadQueue(false);
-    queue.loadFile({ src: "../assets/public/loader.riv" });
+    queue.loadFile({ id: 1, src: "../assets/public/loader.riv" });
     queue.loadFile({
       src: "../assets/arrow-down.svg",
       type: createjs.Types.IMAGE,
