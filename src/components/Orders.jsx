@@ -69,7 +69,7 @@ export default function Orders() {
             <p>Invoice</p>
           </div>
 
-          <div className="w-full h-[2px] bg-[#EDF2F6]"></div>
+          <div className="w-full h-[2px] bg-[#EDF2F6] dark:bg-gray-700"></div>
         </div>
 
         {/* The orders */}
@@ -87,7 +87,7 @@ export default function Orders() {
               {arr.length - 1 == idx ? (
                 ""
               ) : (
-                <div className="w-full h-[2px] bg-[#EDF2F6]"></div>
+                <div className="w-full h-[2px] bg-[#EDF2F6] dark:bg-gray-700"></div>
               )}
             </div>
           );
@@ -107,14 +107,14 @@ function EachOrder(props) {
       {/* Name container */}
       <div className="order-item flex gap-3 items-center">
         <img src={props.img} className="max-w-[30px]" alt="" />
-        <p className="font-medium text-[#3A3F51]">{props.name}</p>
+        <p className="font-medium text-[#3A3F51] dark:text-white">{props.name}</p>
       </div>
 
       {/* Date container */}
       <p className="order-item font-[400]">{props.date}</p>
 
       {/* Amount container */}
-      <p className="order-item font-medium text-[#0D062D]">{props.amount}</p>
+      <p className="order-item font-medium text-[#0D062D] dark:text-white">{props.amount}</p>
 
       {/* Status container */}
       <p
@@ -127,8 +127,8 @@ function EachOrder(props) {
 
       {/* Invoice container */}
       <div className="order-item cursor-pointer flex items-center gap-2">
-        <img src={view} alt="" />
-        <p className="font-[400] text-[#0D062D] text-sm">View</p>
+        <img src={view} alt="" className="svg-icon" />
+        <p className="font-[400] text-[#0D062D] dark:text-white text-sm">View</p>
       </div>
     </div>
   );

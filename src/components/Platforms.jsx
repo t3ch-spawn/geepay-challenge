@@ -39,7 +39,7 @@ export default function Platforms() {
     <Card styles="w-full flex-col justify-between flex gap-5 max-w-[600px] -1200:max-w-[initial] platforms_container">
       {/* Top part with headings */}
       <div className="flex justify-between">
-        <p className="text-[#26282C] font-semibold">Top Platform</p>{" "}
+        <p className="text-[#26282C] dark:text-white font-semibold">Top Platform</p>{" "}
         <p className="text-[#34CAA5] font-medium">See All</p>
       </div>
 
@@ -69,10 +69,10 @@ function EachPlatform(props) {
   return (
     <div className="flex flex-col gap-3">
       {/* Name */}
-      <p className="text-[#22242C] font-semibold">{props.name}</p>
+      <p className="text-[#22242C] dark:text-white font-semibold">{props.name}</p>
 
       {/* Bar */}
-      <div className="bg-[#F5F5F5] h-[10px] w-full">
+      <div className="bg-[#F5F5F5] dark:bg-gray-700 h-[10px] w-full rounded-[10px]">
         <div
           className={`h-[100%] rounded-[10px] platform-bar origin-left`}
           style={{ backgroundColor: props.color, width: props.width }}
@@ -80,7 +80,7 @@ function EachPlatform(props) {
       </div>
 
       {/* Price and percent */}
-      <div className="flex justify-between items-center font-[400] text-[#525252]">
+      <div className="flex justify-between items-center font-[400] text-[#525252] dark:text-[#a8a8a8]">
         <p className="">{props.price}</p>
         <p>{props.percent}</p>
       </div>

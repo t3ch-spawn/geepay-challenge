@@ -24,7 +24,7 @@ function App() {
   return (
     <Context.Provider value={[isMobileSide, setMobileSide]}>
       <main className="w-full relative font-jakarta">
-        <Loader />
+        {/* <Loader /> */}
         <Home />
       </main>
     </Context.Provider>

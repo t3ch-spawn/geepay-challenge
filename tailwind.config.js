@@ -1,10 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
         overlay: "rgba(0, 0, 0, 0.7)",
+        darkBg: "rgba(2, 6, 23, 1);",
+        darkCard: "#090c1d",
+        darkSideBar: "rgba(15, 23, 42, 1);",
       },
 
       fontFamily: {

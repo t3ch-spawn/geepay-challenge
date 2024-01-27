@@ -73,12 +73,12 @@ export default function Header() {
           isMobileSide ? "active" : "inactive"
         } burger hidden -1024:flex flex-col fixed left-2 top-3  justify-center  items-center gap-2 h-[40px] w-[40px] rounded-[50%] cursor-pointer z-[50] overflow-hidden`}
       >
-        <div className="line-1 bg-black h-[2px] border-none absolute w-[50%] rounded-md translate-y-[-4px]"></div>
-        <div className="line-2 bg-black h-[2px] border-none absolute w-[50%] rounded-md translate-y-[4px]"></div>
+        <div className="line-1 bg-black dark:bg-white h-[2px] border-none absolute w-[50%] rounded-md translate-y-[-4px]"></div>
+        <div className="line-2 bg-black dark:bg-white h-[2px] border-none absolute w-[50%] rounded-md translate-y-[4px]"></div>
       </div>
 
       {/* Container for desktop header */}
-      <div className="font-inter sticky top-0 flex justify-between items-center w-full px-8 py-3 bg-[#FAFAFA] border-b-2 border-[#E5EAEF] z-20">
+      <div className="font-inter sticky top-0 flex justify-between items-center w-full px-8 py-3 bg-[#FAFAFA] dark:bg-darkBg duration-500 dark:border-gray-700 border-b-2 border-[#E5EAEF] z-20">
         {/* Left part of the dashboard */}
         <div className="font-semibold flex items-center gap-2 justify-center -1024:w-full">
           {/* This image only appears on mobile */}
@@ -138,21 +138,21 @@ export default function Header() {
         {/* container that controls the mobile view */}
         <div
           onClick={handleModal}
-          className="gap-3 border-[#DADDDD] rounded-[100px] border-[1px] p-1 cursor-pointer hidden -1024:flex"
+          className="gap-3 border-[#DADDDD] dark:border-gray-700 rounded-[100px] border-[1px] p-1 cursor-pointer hidden -1024:flex"
         >
           <img src={justin} className="max-w-[30px]" alt="" />
         </div>
 
         {/* Container for modal */}
-        <div className="font-inter modal origin-top overflow-hidden absolute hidden -1024:flex flex-col items-center gap-4 bg-white z-[30] p-5 top-[60px] border-[#EDF2F7] border-[1px] right-[20px] shadow-xl rounded-xl scale-y-0">
+        <div className="font-inter modal origin-top overflow-hidden absolute hidden -1024:flex flex-col items-center gap-4 bg-white dark:bg-darkCard z-[30] p-5 top-[60px] dark:border-gray-700 border-[#EDF2F7] border-[1px] right-[20px] shadow-xl rounded-xl scale-y-0">
           {/* Container for name, mail and picture */}
           <div className="modal-item flex items-center gap-3 ">
             <img src={justin} className="max-w-[30px]" alt="" />
             <div className="font-[400]">
-              <p className="text-[#26282C] text-[1rem] font-[500]">
+              <p className="text-[#26282C] dark:text-white text-[1rem] font-[500]">
                 Justin Bergson
               </p>
-              <p className="text-[#787486] text-sm font-[500]">
+              <p className="text-[#787486] dark:text-white text-sm font-[500]">
                 Justin@gmail.com{" "}
               </p>
             </div>
@@ -160,16 +160,16 @@ export default function Header() {
 
           {/* Container for date */}
           <div className="modal-item flex max-w-[200px] items-center w-fit gap-2 font-medium">
-            <img src={calendar} className="min-w-[25px]" alt="" />
+            <img src={calendar} className="min-w-[25px] svg-icon" alt="" />
 
-            <p className="text-sm font-[600] text-[#26282C]">
+            <p className="text-sm font-[600] text-[#26282C] dark:text-white">
               November 15, 2023
             </p>
           </div>
 
           {/* Container for notification */}
           <img
-            className="modal-item w-full p-2 border-[#DADDDD] border-[1px] rounded-[50%] max-w-[35px]"
+            className="modal-item w-full p-2 border-[#DADDDD] border-[1px] rounded-[50%] max-w-[35px] svg-icon"
             src={notification}
             alt=""
           />

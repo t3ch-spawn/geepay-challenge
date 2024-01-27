@@ -16,7 +16,7 @@
 } */
 
 .wiubiw {
-  color: rgba(0, 0, 0, 0.7);
+  color: rgba(15 23 42 1);
 }
 
 .graph-bar.active {
@@ -117,4 +117,39 @@
   100% {
     transform: translateY(4px) translateX(0px) rotate(0deg);
   }
+}
+
+.graph-sortBox .graph-modal {
+  transform: scaleY(0);
+  transition: 0.2s ease-in-out;
+  z-index: 10;
+}
+.graph-sortBox.active .graph-modal {
+  transform: scaleY(1);
+}
+
+.graph-sortBox img {
+  transition: 0.4s ease-in-out;
+}
+.graph-sortBox.active img {
+  transform: rotate(180deg);
+}
+
+html.dark .svg-icon {
+  filter: brightness(0) invert(100);
+}
+html.dark .svg-moon {
+  filter: brightness(0);
+}
+
+.theme-bubble_desktop,
+.theme-bubble_mobile {
+  transition: 0.4s cubic-bezier(.36,.76,0,1.54);
+}
+
+.theme-bubble_desktop.active {
+  bottom: 10%;
+}
+.theme-bubble_mobile.active {
+  left: 52%;
 }

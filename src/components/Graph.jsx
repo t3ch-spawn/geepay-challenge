@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import arrDown from "../assets/arrow-down.svg";
 import graphLines from "../assets/graph-lines.png";
 import gsap from "gsap";
@@ -70,6 +70,18 @@ const graphContent = [
 ];
 
 export default function Graph() {
+  const [isGraphModalShown, setIsGraphModalShown] = useState(false);
+  const [periodicState, setPeriodicState] = useState("Weekly");
+
+  function handleGraphModal() {
+    setIsGraphModalShown(!isGraphModalShown);
+  }
+
+  function updatePeriod(e) {
+    const period = e.currentTarget.textContent;
+    setPeriodicState(period);
+  }
+
   return (
     <Card styles="relative flex flex-col justify-between gap-5 w-full max-w-[900px] -1200:max-w-[initial]">
       {/* Top part of the graph */}
@@ -79,9 +91,21 @@ export default function Graph() {
         {/* Sort container */}
         <div className="flex text-sm items-center gap-4">
           <p className="font-medium -450:hidden">Sort by:</p>
-          <div className="flex border-[#E1DFDF] border-[1px] items-center gap-2 rounded-[20px] p-2 px-4 -450:text-xs ">
-            <p className="font-[400]">Weekly</p>
-            <img src={arrDown} alt="" />
+          <div
+            className={`${
+              isGraphModalShown ? "active" : ""
+            } graph-sortBox relative cursor-pointer flex border-[#E1DFDF]  dark:border-gray-700  border-[1px] items-center gap-2 rounded-[20px] p-2 px-4 -450:text-xs`}
+            onClick={handleGraphModal}
+          >
+            <p className="font-[400]">{periodicState}</p>
+            <img src={arrDown} className="svg-icon" alt="" />
+
+            {/* Container for dropdown */}
+            <div className="graph-modal flex flex-col gap-3  absolute bg-white dark:bg-darkCard shadow-2xl top-[140%] w-full border-[1px] border-[#E1DFDF] dark:border-gray-700 p-3 rounded-2xl left-0 origin-top">
+              <p onClick={updatePeriod}>Yearly</p>
+              <p onClick={updatePeriod}>Monthly</p>
+              <p onClick={updatePeriod}>Weekly</p>
+            </div>
           </div>
         </div>
       </div>
@@ -103,7 +127,7 @@ export default function Graph() {
         {/* Right side with the bars */}
         <div className="w-full flex -700:overflow-x-scroll">
           {" "}
-          <div className="graph-sheet flex w-full -650:w-[initial] relative -1024:gap-3 justify-around -700:justify-start  ">
+          <div className="graph-sheet flex w-full -700:overflow-x-scroll overflow-hidden -650:w-[initial] relative -1024:gap-3 justify-around -700:justify-start  ">
             {graphContent.map((bar, idx) => {
               return (
                 <EachBar key={idx} month={bar.month} height={bar.height} />
@@ -127,13 +151,13 @@ function EachBar(props) {
     <div className="flex flex-col w-[33px] -650:w-[25px] gap-8 z-[5] cursor-pointer graph-bar_container h-full justify-end relative">
       {/* Shape showing price */}
       {props.month == "Jun" ? (
-        <div className="june-shape bg-black w-[100px] h-[30px] rounded-[7px] absolute top-[0px] left-[50%] translate-x-[-50%] text-white flex justify-center items-center ">
-          <p className="z-[14] relative w-full h-full flex justify-center items-center text-xs">
+        <div className="june-shape bg-black dark:bg-white w-[100px] h-[30px] rounded-[7px] absolute top-[0px] left-[50%] translate-x-[-50%] dark:text-black font-[500] text-white flex justify-center items-center ">
+          <p className="z-[14] relative w-full h-full flex justify-center items-center text-xs ">
             {" "}
             $45.000
           </p>
           <div
-            className="bg-black w-[30px] h-[15px] absolute bottom-[-6px]"
+            className="bg-black dark:bg-white w-[30px] h-[15px] absolute bottom-[-6px]"
             style={{ clipPath: "polygon(100% 0, 0 0, 50% 100%)" }}
           ></div>
         </div>

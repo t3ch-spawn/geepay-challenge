@@ -7,10 +7,9 @@ import AllStats from "./AllStats";
 import Platforms from "./Platforms";
 import search from "../assets/search-icon.svg";
 
-
 export default function Home() {
   return (
-    <div className="flex w-full relative bg-[#FAFAFA]">
+    <div className="flex w-full relative bg-[#FAFAFA] dark:text-white dark:bg-darkBg duration-[500ms]">
       {/* The sidebar that's on the extreme left */}
       <div>
         <Sidebar />
@@ -27,7 +26,7 @@ export default function Home() {
             <input
               type="text"
               placeholder="Search..."
-              className="w-full border-[#DADDDD] border-2 rounded-[30px] px-4 p-2 pl-8 focus:outline-none focus:shadow-xl duration-300 placeholder:text-[#A3A3A3] text-sm"
+              className="w-full border-[#DADDDD] dark:bg-[transparent] dark:border-gray-700 border-2 rounded-[30px] px-4 p-2 pl-8 focus:outline-none focus:shadow-xl duration-300 placeholder:text-[#A3A3A3] text-sm"
             />
             <img
               className="absolute top-[50%] translate-y-[-50%] left-2"

@@ -123,9 +123,9 @@ function EachStat(props) {
         {props.children}
       </div>
       {/* Stat name */}
-      <p className="text-[#898989] font-medium">{props.name}</p>
+      <p className="text-[#898989] dark:text-white font-medium">{props.name}</p>
       {/* Stat number */}
-      <p className="text-[#3A3F51] font-semibold text-[1.3rem]">
+      <p className="text-[#3A3F51] dark:text-white font-semibold text-[1.3rem]">
         {props.number}{" "}
       </p>
       {/* Container for previous month stat */}
