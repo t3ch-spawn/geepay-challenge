@@ -116,7 +116,7 @@ function EachStat(props) {
       {/* Container for graph and icon */}
       <div className="flex items-center justify-between w-full">
         <img
-          className="w-full p-2 border-[#E6E6E6] border-[1px] rounded-[50%] max-w-[45px]"
+          className="w-full p-2 border-[#E6E6E6] dark:border-gray-700 border-[1px] rounded-[50%] max-w-[45px]"
           src={props.icon}
           alt=""
         />

@@ -144,7 +144,7 @@ html.dark .svg-moon {
 
 .theme-bubble_desktop,
 .theme-bubble_mobile {
-  transition: 0.4s cubic-bezier(.36,.76,0,1.54);
+  transition: 0.4s cubic-bezier(0.36, 0.76, 0, 1.54);
 }
 
 .theme-bubble_desktop.active {
@@ -152,4 +152,22 @@ html.dark .svg-moon {
 }
 .theme-bubble_mobile.active {
   left: 52%;
+}
+
+.bottom-order::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.bottom-order {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.loading-bar {
+  transition: 1s cubic-bezier(0.61, -0.46, 0, 1.52);
+}
+
+.loading-bar.active {
+  transform: scale(0);
 }

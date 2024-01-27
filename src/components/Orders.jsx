@@ -58,7 +58,7 @@ export default function Orders() {
       </div>
 
       {/* Bottom part, containing the details of the order */}
-      <div className="flex-col flex gap-4 overflow-x-scroll">
+      <div className="flex-col flex gap-4 overflow-x-scroll bottom-order">
         {/* Container for heading */}
         <div className="flex flex-col gap-4">
           <div className="grid grid-cols-[minmax(220px,_1fr)_repeat(3,_minmax(140px,_1fr))_70px] gap-2 text-[#9CA4AB] font-medium">

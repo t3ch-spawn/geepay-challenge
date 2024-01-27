@@ -40,7 +40,7 @@ export default function Platforms() {
       {/* Top part with headings */}
       <div className="flex justify-between">
         <p className="text-[#26282C] dark:text-white font-semibold">Top Platform</p>{" "}
-        <p className="text-[#34CAA5] font-medium">See All</p>
+        <p className="text-[#34CAA5] font-medium cursor-pointer">See All</p>
       </div>
 
       <div className="flex flex-col gap-5">
