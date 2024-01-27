@@ -75,6 +75,7 @@ export default function Graph() {
 
   function handleGraphModal() {
     setIsGraphModalShown(!isGraphModalShown);
+    console.log("hi");
   }
 
   function updatePeriod(e) {
@@ -84,6 +85,14 @@ export default function Graph() {
 
   return (
     <Card styles="relative flex flex-col justify-between gap-5 w-full max-w-[900px] -1200:max-w-[initial]">
+      {/* Overlay that pops up when user graph modal comes up */}
+      <div
+        className={`fixed top-0 left-0 bg-[transparent] h-full w-full z-[15] ${
+          isGraphModalShown ? "block" : "hidden"
+        }`}
+        onClick={handleGraphModal}
+      ></div>
+
       {/* Top part of the graph */}
       <div className="flex justify-between items-center">
         <p className="text-xl font-semibold -450:text-sm">Sales Trends</p>
@@ -94,7 +103,7 @@ export default function Graph() {
           <div
             className={`${
               isGraphModalShown ? "active" : ""
-            } graph-sortBox relative cursor-pointer flex border-[#E1DFDF]  dark:border-gray-700  border-[1px] items-center gap-2 rounded-[20px] p-2 px-4 -450:text-xs`}
+            } graph-sortBox relative cursor-pointer flex z-[7] border-[#E1DFDF]  dark:border-gray-700  border-[1px] items-center gap-2 rounded-[20px] p-2 px-4 -450:text-xs`}
             onClick={handleGraphModal}
           >
             <p className="font-[400]">{periodicState}</p>
@@ -127,7 +136,7 @@ export default function Graph() {
         {/* Right side with the bars */}
         <div className="w-full flex -700:overflow-x-scroll">
           {" "}
-          <div className="graph-sheet flex w-full -650:w-[initial] relative -1024:gap-3 justify-around -700:justify-start  ">
+          <div className="graph-sheet flex w-full -650:w-[initial] overflow-y-hidden -700:overflow-y-visible relative -1024:gap-3 justify-around -700:justify-start  ">
             {graphContent.map((bar, idx) => {
               return (
                 <EachBar key={idx} month={bar.month} height={bar.height} />

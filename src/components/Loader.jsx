@@ -25,8 +25,12 @@ export default function Loader() {
             .to(".loader-overlay", {
               scaleY: 0,
               stagger: 0.5,
+              onStart: () => {
+                document.querySelector("body").classList.add("active");
+              },
               onComplete: () => {
                 // Animation for graph section
+
                 gsap.to(
                   ".graph-bar",
 
@@ -162,11 +166,11 @@ export default function Loader() {
 
   return (
     <>
-      <div className="loader-overlay fixed top-0 left-0 h-full w-full z-[60] bg-white flex justify-center items-center origin-top">
-        <RiveComponent className="rive-component w-full max-w-[200px] mx-auto h-full" />
+      <div className="loader-overlay fixed top-0 left-0 h-[100%] w-full z-[60] bg-white flex justify-center items-center origin-top">
         {/* Loading progress bar */}
+        <RiveComponent className="rive-component w-full max-w-[200px] mx-auto h-full" />
         <div
-          className={`absolute top-[80%] left-[50%] translate-x-[-50%] w-full max-w-[280px] flex flex-col items-center gap-4`}
+          className={`absolute top-[65%] left-[50%] translate-x-[-50%] w-full max-w-[280px] flex flex-col items-center gap-4`}
         >
           <div
             className={`${
@@ -186,7 +190,7 @@ export default function Loader() {
         </div>
       </div>
 
-      <div className="loader-overlay fixed bg-[#34CAA5] h-full w-full top-0 left-0 z-[50] origin-bottom"></div>
+      <div className="loader-overlay fixed bg-[#34CAA5] h-[100%] w-full top-0 left-0 z-[50] origin-bottom"></div>
     </>
   );
 }

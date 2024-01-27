@@ -12,6 +12,7 @@ export default function Header() {
   const [isMobileSide, setMobileSide] = useContext(Context);
   const timeline = useRef(null);
   const [modalShowm, setModalShown] = useState(false);
+  const [deskModalShowm, setDeskModalShown] = useState(false);
   useEffect(() => {
     // This removes the 'inactive' class on initial mount
     const burger = document.querySelector(".burger");
@@ -42,6 +43,10 @@ export default function Header() {
     setModalShown(!modalShowm);
   }
 
+  function handleDeskModal() {
+    setDeskModalShown(!deskModalShowm);
+  }
+
   function handleMobileSidebar() {
     setMobileSide(!isMobileSide);
   }
@@ -54,6 +59,13 @@ export default function Header() {
           modalShowm ? "block" : "hidden"
         }`}
         onClick={handleModal}
+      ></div>
+      {/* Overlay that pops up when user desktop modal comes up */}
+      <div
+        className={`fixed top-0 left-0 bg-[transparent] h-full w-full z-[15] ${
+          deskModalShowm ? "block" : "hidden"
+        }`}
+        onClick={handleDeskModal}
       ></div>
 
       {/* Overlay that toggles with mobile side bar */}
@@ -121,7 +133,10 @@ export default function Header() {
           />
 
           {/* Container for user */}
-          <div className="border-[#DADDDD] dark:border-gray-700 w-full max-w-[220px] border-[1px] rounded-[100px] flex p-[0.1rem] px-3 items-center gap-2 cursor-pointer">
+          <div
+            onClick={handleDeskModal}
+            className="border-[#DADDDD] dark:border-gray-700 w-full max-w-[220px] border-[1px] rounded-[100px] flex p-[0.1rem] px-3 items-center gap-2 cursor-pointer"
+          >
             <img src={justin} alt="" />
             <div className="font-[400] text-center">
               <p className="text-[#26282C] dark:text-white text-[1rem] font-[500]">
@@ -132,6 +147,18 @@ export default function Header() {
               </p>
             </div>
             <img src={arrDown} className="max-w-[25px] svg-icon" alt="" />
+
+            {/* Container for drop down */}
+            <div
+              className={`${
+                deskModalShowm ? "active" : ""
+              } font-inter desk-modal origin-top overflow-hidden absolute flex -1024:hidden flex-col items-start gap-3 bg-white dark:bg-darkCard z-[30] p-5 top-[60px] dark:border-gray-700 border-[#EDF2F7] border-[1px] right-[20px] shadow-xl rounded-xl scale-y-1`}
+            >
+              <p>Profiles</p>
+              <p>Teams</p>
+              <p>Billing</p>
+              <p>Switch Account</p>
+            </div>
           </div>
         </div>
 
