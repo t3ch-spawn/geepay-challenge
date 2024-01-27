@@ -171,7 +171,7 @@ export default function Header() {
         </div>
 
         {/* Container for modal */}
-        <div className="font-inter modal origin-top overflow-hidden absolute hidden -1024:flex flex-col items-center gap-4 bg-white dark:bg-darkCard z-[30] p-5 top-[60px] dark:border-gray-700 border-[#EDF2F7] border-[1px] right-[20px] shadow-xl rounded-xl scale-y-0">
+        <div className="font-inter modal origin-top overflow-hidden absolute hidden -1024:flex flex-col items-start gap-4 bg-white dark:bg-darkCard z-[30] p-5 top-[60px] dark:border-gray-700 border-[#EDF2F7] border-[1px] right-[20px] shadow-xl rounded-xl scale-y-0">
           {/* Container for name, mail and picture */}
           <div className="modal-item flex items-center gap-3 ">
             <img src={justin} className="max-w-[30px]" alt="" />
@@ -184,7 +184,10 @@ export default function Header() {
               </p>
             </div>
           </div>
-
+          <p className="modal-item">Profiles</p>
+          <p className="modal-item">Teams</p>
+          <p className="modal-item">Billing</p>
+          <p className="modal-item">Switch Account</p>
           {/* Container for date */}
           <div className="modal-item flex max-w-[200px] items-center w-fit gap-2 font-medium">
             <img src={calendar} className="min-w-[25px] svg-icon" alt="" />
