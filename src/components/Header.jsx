@@ -93,7 +93,7 @@ export default function Header() {
             <input
               type="text"
               placeholder="Search..."
-              className="w-full border-[#DADDDD] border-2 rounded-[30px] px-4 p-2 pl-8 focus:outline-none focus:shadow-xl duration-300 placeholder:text-[#A3A3A3] text-sm"
+              className="w-full border-[#DADDDD] dark:bg-[transparent] dark:border-gray-700 border-2 rounded-[30px] px-4 p-2 pl-8 focus:outline-none focus:shadow-xl duration-300 placeholder:text-[#A3A3A3] text-sm"
             />
             <img
               className="absolute top-[50%] translate-y-[-50%] left-2"
@@ -106,7 +106,7 @@ export default function Header() {
           <div className="flex max-w-[200px] items-center w-fit gap-2 font-medium">
             <img src={calendar} className="min-w-[25px]" alt="" />
 
-            <p className="text-sm font-[600] text-[#26282C]">
+            <p className="text-sm font-[600] text-[#26282C] dark:text-white">
               November 15, 2023
             </p>
           </div>
@@ -115,23 +115,23 @@ export default function Header() {
           {/* <div className="flex items-center h-[25px] w-[30px] border-2 border-black rounded-[50%]">
         </div> */}
           <img
-            className="w-full p-2 border-[#DADDDD] border-[1px] rounded-[50%] max-w-[35px]"
+            className="w-full p-2 border-[#DADDDD] border-[1px] rounded-[50%] max-w-[35px] svg-icon"
             src={notification}
             alt=""
           />
 
           {/* Container for user */}
-          <div className="border-[#DADDDD] w-full max-w-[220px] border-[1px] rounded-[100px] flex p-[0.1rem] px-3 items-center gap-2 cursor-pointer">
+          <div className="border-[#DADDDD] dark:border-gray-700 w-full max-w-[220px] border-[1px] rounded-[100px] flex p-[0.1rem] px-3 items-center gap-2 cursor-pointer">
             <img src={justin} alt="" />
             <div className="font-[400] text-center">
-              <p className="text-[#26282C] text-[1rem] font-[500]">
+              <p className="text-[#26282C] dark:text-white text-[1rem] font-[500]">
                 Justin Bergson
               </p>
-              <p className="text-[#787486] text-sm font-[500]">
+              <p className="text-[#787486] text-sm font-[500] dark:text-[#a8a8a8]">
                 Justin@gmail.com{" "}
               </p>
             </div>
-            <img src={arrDown} className="max-w-[25px]" alt="" />
+            <img src={arrDown} className="max-w-[25px] svg-icon" alt="" />
           </div>
         </div>
 
@@ -152,7 +152,7 @@ export default function Header() {
               <p className="text-[#26282C] dark:text-white text-[1rem] font-[500]">
                 Justin Bergson
               </p>
-              <p className="text-[#787486] dark:text-white text-sm font-[500]">
+              <p className="text-[#787486] dark:text-[#a8a8a8] text-sm font-[500]">
                 Justin@gmail.com{" "}
               </p>
             </div>

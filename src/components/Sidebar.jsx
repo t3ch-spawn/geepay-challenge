@@ -119,11 +119,10 @@ export default function Sidebar() {
               <div
                 key={idx}
                 onClick={translateLine}
-                className={`w-fit rounded-[50%] p-2 hover:bg-[#EBECF2] duration-200`}
+                className={`w-fit rounded-[50%] p-2 hover:bg-[#EBECF2] dark:hover:bg-gray-700 duration-200`}
                 style={{ backgroundColor: pic.bg }}
               >
                 <img src={pic.icon} alt="" className="svg-icon" />
-                {/* <object className="svg-cont" type="image/svg+xml" data={pic.icon}></object> */}
               </div>
             );
           })}
@@ -152,7 +151,7 @@ export default function Sidebar() {
               <div
                 key={idx}
                 // onClick={translateLine}
-                className={`w-fit rounded-[50%] p-2 hover:bg-[#EBECF2] duration-200`}
+                className={`w-fit rounded-[50%] p-2 hover:bg-[#EBECF2] dark:hover:bg-gray-700 duration-200`}
                 style={{ backgroundColor: pic.bg }}
               >
                 <img src={pic.icon} alt="" className="svg-icon" />

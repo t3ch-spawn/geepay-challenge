@@ -127,7 +127,7 @@ export default function Graph() {
         {/* Right side with the bars */}
         <div className="w-full flex -700:overflow-x-scroll">
           {" "}
-          <div className="graph-sheet flex w-full -700:overflow-x-scroll overflow-hidden -650:w-[initial] relative -1024:gap-3 justify-around -700:justify-start  ">
+          <div className="graph-sheet flex w-full -650:w-[initial] relative -1024:gap-3 justify-around -700:justify-start  ">
             {graphContent.map((bar, idx) => {
               return (
                 <EachBar key={idx} month={bar.month} height={bar.height} />
