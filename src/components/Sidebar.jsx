@@ -138,7 +138,7 @@ export default function Sidebar() {
           </div>
           <img
             ref={lineEl}
-            className="absolute right-[-8px] top-16 duration-200 ease-in-out"
+            className="absolute right-[-8px] top-16 duration-200 ease-in-out svg-icon"
             src={line}
             alt=""
           />
